@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About Courier</title>
+	<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.4.0/dist/reset.css">
+	<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.4.0/dist/reveal.css">
+	<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.4.0/dist/theme/black.css">
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-auto-animate>
+				<h1>About Courier</h1>
+			</section>
+			<section data-auto-animate>
+				<h1>About Courier</h1>
+				<p>Courier is a free-and-open-source multi-transport secure messaging tool.</p>
+				<p class="fragment">If that's all you wanted to know, there it is - the rest of this presentation tells you
+					about <i>why</i> and <i>how</i>.</p>
+			</section>
+			<section>
+				<section data-auto-animate data-auto-animate-restart>
+					<ul class="h">
+						<li>🕊️</li>
+					</ul>
+					<p>
+						You can think about messages on the internet as if they were very fast carrier pigeons.
+					</p>
+					<p>Let's consider the journey of a message.</p>
+				</section>
+				<section data-auto-animate>
+					<ul class="h">
+						<li>🏠</li>
+						<li>🕊️</li>
+						<li>🏠</li>
+					</ul>
+					<p>
+						Ideally, your pigeon could travel between houses unmolested, but we won't get anywhere in cybersecurity if
+						we
+						assume everything goes perfectly.
+					</p>
+				</section>
+				<section data-auto-animate="">
+					<ul class="h">
+						<li>🏠</li>
+						<li>🕊️</li>
+						<li>😈</li>
+						<li>🏠</li>
+					</ul>
+					<p>
+						Imagine someone malicious found your message before it reached its destination!
+					</p>
+					<p class="fragment">
+						They could read your message, modify it, or worse...
+					</p>
+					<p class="fragment">
+						They could stop it from going through at all!
+					</p>
+				</section>
+				<section data-auto-animate="">
+					<ul class="h">
+						<li>🏠</li>
+						<li>🕊️</li>
+						<li>🕊️</li>
+						<li>🕊️</li>
+						<li>🕊️</li>
+						<li>🕊️</li>
+						<li>😈</li>
+						<li>🏠</li>
+					</ul>
+					<p>
+						A naive solution to this problem would be to send lots of pigeons, but that can get very expensive.
+					</p>
+					<p class="fragment">
+						And, if the malicious person manages to catch all of them, your friend would have no idea what's wrong!
+					</p>
+				</section>
+				<section data-auto-animate="">
+					<ul class="h">
+						<li>🕊️</li>
+						<li class="fragment" data-fragment-index="1">🕊️</li>
+					</ul>
+					<p>
+						Courier's solution to this problem is a bit more nuanced.
+					</p>
+					<p class="fragment" data-fragment-index="1">
+						We'll send multiple messages for simple redundancy, of course, but we'll also send them through different
+						<i>territory.</i>
+					</p>
+				</section>
+				<section data-auto-animate="">
+					<ul class="h">
+						<li>🕊️</li>
+						<li>📧</li>
+						<li>🐦</li>
+						<li>📱</li>
+					</ul>
+					<p>
+						Outside of our carrier pigeon analogy, this means that the messages will be sent through different
+						<i>transports</i>.
+					</p>
+					<p class="fragment">This might mean a common standard like E-Mail, or something more obscure like XMPP, IRC,
+						or
+						Matrix.</p>
+					<p class="fragment">You can have as many of these different transports as you like.</p>
+				</section>
+				<section data-auto-animate="">
+					<ul class="h">
+						<li>🏠</li>
+						<li>🕊️</li>
+						<li class="fragment" data-fragment-index="1">
+							😈
+						</li>
+						<li class="fragment" data-fragment-index="1">
+							🦤
+						</li>
+						<li>🏠</li>
+					</ul>
+					<p>
+						Now we've made it difficult to completely block the message by shooting the pigeon out of the sky.
+					</p>
+					<p class="fragment" data-fragment-index="1">
+						But, someone along one of the routes might still read the message, and if multiple routes decide to modify
+						it,
+						your friend won't be able to tell which is real.
+					</p>
+				</section>
+				<section data-auto-animate="">
+					<ul class="h">
+						<li class="fragment" data-fragment-index="1">
+							🦉
+						</li>
+						<li>🏠</li>
+						<li>🕊️</li>
+						<li>
+							😈
+						</li>
+						<li class="fragment" data-fragment-index="1">
+							❓
+						</li>
+						<li>🏠</li>
+						<li class="fragment" data-fragment-index="1">
+							🦉
+						</li>
+					</ul>
+					<p>
+						To mitigate this, we need to add an extra step that converts the message into some format that other people
+						can't read.
+					</p>
+					<p class="fragment" data-fragment-index="1">
+						We'll have two owls translate the message to and from a special "owl language", that only these two owls can
+						read.
+					</p>
+					<p class="fragment" data-fragment-index="2">
+						Outside our analogy, this is called "encryption".
+					</p>
+				</section>
+				<section data-auto-animate="">
+					<ul class="h">
+						<li>
+							🦉
+						</li>
+						<li>🏠</li>
+						<li>🕊️</li>
+						<li>
+							😈
+						</li>
+						<li>
+							❗
+						</li>
+						<li>🏠</li>
+						<li>
+							🦉
+						</li>
+					</ul>
+					<p>
+						However, by rewriting the message in "owl language", we've introduced a new problem: the agent can tell the
+						difference between messages in "owl language" and messages in English.
+					</p>
+					<p class="fragment">
+						Land owners (service providers like Google or your ISP) want to know what's inside the messages that pass
+						through their land, so they might not allow people to use "owl language" in their territory.
+					</p>
+				</section>
+				<section data-auto-animate="">
+					<ul class="h">
+						<li>
+							🦉
+						</li>
+						<li>
+							🦜
+						</li>
+						<li>🏠</li>
+						<li>🕊️</li>
+						<li>
+							😈
+						</li>
+						<li>
+							😕
+						</li>
+						<li>🏠</li>
+						<li>
+							🦜
+						</li>
+						<li>
+							🦉
+						</li>
+					</ul>
+					<p>
+						In our analogy, we'll have a parrot translate the "owl language" to and from "parrot language", which looks
+						close enough to English that the land owner hopefully won't notice.
+					</p>
+					<p>
+						Outside our analogy, this is called "armoring".
+					</p>
+				</section>
+				<section data-auto-animate="">
+					<ul class="h">
+						<li class="fragment" data-fragment-index="1">
+							🦉
+						</li>
+						<li class="fragment" data-fragment-index="2">
+							🦜
+						</li>
+						<li>🏠</li>
+						<li>🕊️</li>
+						<li>🏠</li>
+						<li class="fragment" data-fragment-index="3">
+							🦜
+						</li>
+						<li class="fragment" data-fragment-index="4">
+							🦉
+						</li>
+					</ul>
+					<p>
+						To reiterate:
+					</p>
+					<ul>
+						<li class="fragment" data-fragment-index="1">
+							We have an owl translate the message into "owl language" - we encrypt the message.
+						</li>
+						<li class="fragment" data-fragment-index="2">
+							Then, a parrot translates the owl language into "parrot language" - we armor it against detection.
+						</li>
+						<li class="fragment" data-fragment-index="3">
+							Once the message arrives with your friend, their parrot translates the message back into "owl language" -
+							they decode the armored data.
+						</li>
+						<li class="fragment" data-fragment-index="4">
+							Finally, your friend has their owl translate the "owl language" into English - they decrypt the data.
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate="">
+					<ul class="h">
+						<li data-id="you">😕</li>
+						<li>🦉</li>
+						<li>🦜</li>
+						<li>🏠</li>
+						<li>🕊️</li>
+						<li>🏠</li>
+						<li data-id="friend">😕</li>
+					</ul>
+					<p>
+						Of course, not everyone you communicate with will have a Courier-compatible messenger, but that doesn't mean
+						Courier won't also be useful to them.
+					</p>
+				</section>
+				<section data-auto-animate>
+					<ul class="h">
+						<li data-id="you">😃</li>
+						<li>🏠</li>
+						<li>🕊️</li>
+						<li>🏠</li>
+						<li data-id="friend">😃</li>
+					</ul>
+					<p>
+						You can set your Courier client into "insecure mode", which will allow you to communicate with normal users
+						of
+						any transports Courier knows about.
+					</p>
+				</section>
+				<section data-auto-animate>
+					<ul class="h">
+						<li data-id="you">😰</li>
+						<li>🏠</li>
+						<li>😈</li>
+						<li>🕊️</li>
+						<li>🏠</li>
+						<li data-id="friend">😰</li>
+					</ul>
+					<p>
+						Of course, this means that anyone with control over the transport will be able to read and modify your
+						messages, since Courier can't take any of the aforementioned precautions in insecure mode.
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<p>
+						You might be thinking: "That all sounds nice, but how can you be sure your friend has the same encryption
+						key as you?"
+					</p>
+					<p>
+						Courier has a ✨ fun protocol ✨ for exchanging keys, too! This one doesn't have a fun analogy,
+						though...
+					</p>
+				</section>
+				<section>
+					<p>
+						When you're with someone in person, you can use "physical exchange".
+					</p>
+					<p>
+						Your Courier clients will make some funky noises at one another, which allow them to exchange data with
+						complete certainty that the data wasn't tampered with or intercepted.
+					</p>
+					<p>
+						Courier physical exchange uses audible sound for the same reason as the early internet: humans can hear
+						sound, which means we can tell when something's abnormal all on our own.
+					</p>
+				</section>
+				<section>
+					<p>
+						If you're not together in person, you can use "introduction exchange".
+						For introduction exchange, you'll have to find at least three people that know both you and the person you
+						want to communicate with.
+					</p>
+					<p>
+						Those mutual friends can send you and the other person "introduction
+						packets", containing the other person's public key and information for at least one transport.
+					</p>
+					<p>
+						Multiple friends are needed for security reasons: all of
+						your friends would have to cooperate to forge an introduction packet, as opposed to just one.
+					</p>
+				</section>
+				<section>
+					<p>
+						If you initially did an introduction exchange, but afterwards you want to upgrade to the level of trust you
+						get from a physical exchange, you can always perform another physical exchange later. You can also compare
+						public keys remotely using an out-of-band, hard-to-forge communication channel, like a phone call, since
+						public keys aren't sensitive.
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					There are also some extra technical benifits to Courier's design.
+				</section>
+				<section>
+					Courier's source code is public under an open-source license, so you can personally audit every change I make,
+					and if you don't agree, you can copy an older version to make your own Courier (with blackjack and hookers).
+				</section>
+				<section>
+					Since Courier only communicates with services that its developers don't control, it would be very difficult
+					for me or another person with control over Courier's source code to add a back-door without causing suspicion.
+				</section>
+				<section>
+					Due to the high latency involved in Courier's operations, Courier behaves more like e-mail than a modern
+					instant messaging app. Depending on your attitude, this might not be a good thing, but I think it's a welcome
+					respite from the everything-all-of-the-time nature of today's internet.
+				</section>
+			</section>
+			<section>(just so you know, courier doesn't actually exist yet :P)</section>
+			<section>
+				Copyright (c) 2022 Willow Carlson-Huber.
+				Permission is granted to copy, distribute and/or modify this document
+				under the terms of the GNU Free Documentation License, Version 1.3
+				or any later version published by the Free Software Foundation;
+				with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+				A copy of the license is available from <a href="https://www.gnu.org/licenses/fdl-1.3.html">the GNU website</a>.
+			</section>
+		</div>
+	</div>
+	<script src="https://unpkg.com/reveal.js@4.4.0/dist/reveal.js"></script>
+	<script>
+		Reveal.initialize({ hash: true })
+	</script>
+</body>
+
+</html>

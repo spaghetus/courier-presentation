@@ -1,0 +1,10 @@
+ul.h li {
+	display: inline-block;
+	padding-left: 0px;
+	text-align: center;
+}
+
+ul.h {
+	padding-left: 0px;
+	text-align: center;
+}
